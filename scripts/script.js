@@ -104,3 +104,24 @@ function resetScore() {
     score.lose = 0;
     score.tie = 0;
 }
+
+/* TEST TEST TEST TEST TEST */
+
+let lastScrollTop = 0;
+
+window.addEventListener("scroll", function () {
+    const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+    const headers = document.querySelectorAll(".just-buttons-header");
+
+    headers.forEach(header => {
+        if (currentScroll > lastScrollTop) {
+            // Scrolling down
+            header.style.transform = "translateY(-100%)";
+        } else {
+            // Scrolling up
+            header.style.transform = "translateY(0)";
+        }
+    });
+
+    lastScrollTop = currentScroll;
+});

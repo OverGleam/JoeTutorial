@@ -52,17 +52,21 @@
     <h1 class="title">This is Rock Paper Scissors game</h1>
     <div class="game-container">
         <div class="move-buttons">
-            <button class="move-button" onclick="makeMove('Rock')">
-                <img class="move-icon" src="images/Rock.svg">Rock
-            </button>
-
-            <button class="move-button" onclick="makeMove('Paper')">
-                <img class="move-icon" src="images/Paper.svg">Paper
-            </button>
-
-            <button class="move-button" onclick="makeMove('Scissors')">
-                <img class="move-icon" src="images/Scissors.svg">Scissors
-            </button>
+            <div class="rock-container">
+                <button class="move-button" onclick="makeMove('Rock')">
+                    <img class="move-icon" src="images/Rock.svg">
+                </button>
+            </div>
+            <div class="rock-container">
+                <button class="move-button" onclick="makeMove('Paper')">
+                    <img class="move-icon" src="images/Paper.svg">
+                </button>
+            </div>
+            <div class="rock-container">
+                <button class="move-button" onclick="makeMove('Scissors')">
+                    <img class="move-icon" src="images/Scissors.svg">
+                </button>
+            </div>
         </div>
 
         <div id="scroll-container">
