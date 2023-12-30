@@ -4,102 +4,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/style.css">
     <title>Document</title>
 </head>
 
 <body>
+    <h1 class="title">This is Rock Paper Scissors game</h1>
+    <div class="move-buttons">
+        <button class="move-button" onclick="makeMove('Rock')">
+            <img class="move-icon" src="images/Rock.svg">Rock
+        </button>
 
-    <button onclick="
-        console.log(`Computer picks : ${computerMoveResult}`);
-        makeMove('Rock')">Rock</button>
+        <button class="move-button" onclick="makeMove('Paper')">
+            <img class="move-icon" src="images/Paper.svg">Paper
+        </button>
 
-    <button onclick="
-        console.log(`Computer picks : ${computerMoveResult}`);
-        makeMove('Paper')">Paper</button>
+        <button class="move-button" onclick="makeMove('Scissors')">
+            <img class="move-icon" src="images/Scissors.svg">Scissors
+        </button>
+    </div>
 
-    <button onclick="
-        console.log(`Computer picks : ${computerMoveResult}`);
-        makeMove('Scissors')">Scissors</button>
+    <div id="scroll-container">
+        <h4 class="result">You win!</h4>
+    </div>
+    <p class="display-moves">Moves</p>
 
-    <button onclick="
-        localStorage.removeItem('Score');
-        score.win = 0;
-        score.lose = 0;
-        score.tie = 0;
-    ">Reset</button>
+    <p class="js-scores">Win: 0 Lose: 0 Tie: 0</p>
 
-    <button onclick="">Print Hello</button>
+    <button class="reset-button" onclick="
+        resetScore();
+        updateScores();
+        document.querySelector('.display-moves').innerHTML = 'Moves'
+    ">Reset Score</button>
 
-    <button onclick="">It's me</button>
+    <!-- <div class="just-buttons">
+        <button onclick="alert('Hello!');">Print Hello</button>
 
-    <button onclick="
-        console.log(score);
-        const jsonString = JSON.stringify(score);
-        console.log(jsonString)
-        console.log(JSON.parse(jsonString));
-        console.log(typeof jsonString);
-    ">JSON</button>
+        <button onclick="alert(localStorage.getItem('gameMaster'));">It's me</button>
 
-    <script>
-        let score = JSON.parse(localStorage.getItem('Score'));
+        <p> This is some text </p>
+        <input onkeydown="
+                if(event.key === 'Enter'){
+                    let val = document.querySelector('input').value;
+                if(value === '') {
+                    document.querySelector('p').innerText = `Please input some value ${val}`;
+                }
+                else {
+                    document.querySelector('.test').click();
+                    console.log(document.querySelector('.test'));
+                }
+            }     
+        " placeholder="Enter something">
 
-        if (score == null) {
-            score = {
-                win: 0,
-                lose: 0,
-                tie: 0
-            }
-        }
-
-        function makeMove(YourMoveResult) {
-
-            computerMove = Math.random();
-
-            let computerMoveResult = '';
-
-            if (computerMove >= 0 && computerMove <= 1 / 3) {
-                computerMoveResult = 'Rock'
-                console.log(`Computer picks : ${computerMoveResult}`);
-            }
-            else if (computerMove > 1 / 3 && computerMove <= 2 / 3) {
-                computerMoveResult = 'Paper'
-                console.log(`Computer picks : ${computerMoveResult}`);
-            }
-            else {
-                computerMoveResult = 'Scissors'
-                console.log(`Computer picks : ${computerMoveResult}`);
-            }
-            if (YourMoveResult === 'Rock' && computerMoveResult === 'Scissors') {
-                score.win += 1;
-                alert('You win, Computer Loses!\n' + `Win: ${score.win} Lose: ${score.lose} Tie: ${score.tie}`);
-            }
-            else if (YourMoveResult === 'Rock' && computerMoveResult === 'Paper') {
-                score.lose += 1;
-                alert('You Lose, Computer Wins!\n' + `Win: ${score.win} Lose: ${score.lose} Tie: ${score.tie}`);
-            }
-            else if (YourMoveResult === 'Paper' && computerMoveResult === 'Rock') {
-                score.win += 1;
-                alert('You win, Computer Loses!\n' + `Win: ${score.win} Lose: ${score.lose} Tie: ${score.tie}`);
-            }
-            else if (YourMoveResult === 'Paper' && computerMoveResult === 'Scissors') {
-                score.lose += 1;
-                alert('You Lose, Computer Wins!\n' + `Win: ${score.win} Lose: ${score.lose} Tie: ${score.tie}`);
-            }
-            else if (YourMoveResult === 'Scissors' && computerMoveResult === 'Paper') {
-                score.win += 1;
-                alert('You win, Computer Loses!\n' + `Win: ${score.win} Lose: ${score.lose} Tie: ${score.tie}`);
-            }
-            else if (YourMoveResult === 'Scissors' && computerMoveResult === 'Rock') {
-                score.lose += 1;
-                alert('You Lose, Computer Wins!\n' + `Win: ${score.win} Lose: ${score.lose} Tie: ${score.tie}`);
-            }
-            else {
-                score.tie += 1;
-                alert('Tie\n' + `Win: ${score.win} Lose: ${score.lose} Tie: ${score.tie}`);
-            }
-            localStorage.setItem('Score', JSON.stringify(score));
-        }
-    </script>
+        <button class="test" onclick="
+            document.querySelector('p').innerText = `This is the value you enter : ${document.querySelector('input').value}`;
+            alert(document.querySelector('input').value)">Test</button>
+    </div> -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
+    <script src="scripts/script.js"></script>
 </body>
 
 </html>

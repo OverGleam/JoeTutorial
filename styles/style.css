@@ -1,0 +1,138 @@
+body {
+    background-color: black;
+    cursor: crosshair;
+    height: 100vh;
+    color: white;
+    font-family: Roboto, Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+}
+
+.move-buttons {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+}
+
+.move-button {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 9999px;
+    border: 2px solid whitesmoke;
+    height: 200px;
+    width: 200px;
+    background-color: transparent;
+    color: white;
+    font-family: Roboto;
+    padding: 5px 10px 5px 10px;
+    cursor: pointer;
+    margin: 0px 10px;
+    transition: 0.3s;
+}
+
+.move-button:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.move-button:active {
+    background-color: rgba(222, 222, 222, 0.6);
+}
+
+.move-icon {
+    margin-bottom: 5px;
+    height: 100px;
+    filter: invert(1);
+}
+
+.move-icon-result {
+    filter: invert(1);
+    height: 75px;
+    margin: 0px 30px;
+}
+
+.move-icon-result2 {
+    height: 75px;
+    margin: 0px 30px;
+}
+
+.reset-button {
+    background-color: transparent;
+    border: 2px white solid;
+    color: aliceblue;
+    border-radius: 30px;
+    font-size: 16px;
+    padding: 8px 15px;
+    transition: 0.3s;
+}
+
+.reset-button:hover {
+    background-color: rgba(255, 0, 0, 0.7);
+}
+
+.reset-button:active {
+    background-color: rgba(255, 0, 0, 1);
+    color: black;
+}
+
+input {
+    height: 30px;
+}
+
+
+/* TEST TEST TEST TEST TEST TEST */
+
+#scroll-container {
+    overflow: hidden;
+}
+
+#scroll-text {
+    /* animation properties */
+    -moz-transform: translateX(100%);
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);
+
+    -moz-animation: my-animation 3s linear infinite;
+    -webkit-animation: my-animation 3s linear infinite;
+    animation: my-animation 3s linear infinite;
+}
+
+/* for Firefox */
+@-moz-keyframes my-animation {
+    from {
+        -moz-transform: translateX(100%);
+    }
+
+    to {
+        -moz-transform: translateX(-100%);
+    }
+}
+
+/* for Chrome */
+@-webkit-keyframes my-animation {
+    from {
+        -webkit-transform: translateX(100%);
+    }
+
+    to {
+        -webkit-transform: translateX(-100%);
+    }
+}
+
+@keyframes my-animation {
+    from {
+        -moz-transform: translateX(100%);
+        -webkit-transform: translateX(100%);
+        transform: translateX(100%);
+    }
+
+    to {
+        -moz-transform: translateX(-100%);
+        -webkit-transform: translateX(-100%);
+        transform: translateX(-100%);
+    }
+}
