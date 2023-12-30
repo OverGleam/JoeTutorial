@@ -14,31 +14,40 @@
 
 <body>
 
-    <!-- <div class="just-buttons-header">
+    <div class="just-buttons-header">
         <div class="just-buttons">
-            <button onclick="alert('Hello!');">Print Hello</button>
+            <div>
+                <button class="hello-button" onclick="alert('Hello!');">Print Hello</button>
+            </div>
 
-            <button onclick="alert(localStorage.getItem('gameMaster'));">It's me</button>
+            <div>
+                <button class="its-me-button" onclick="alert(localStorage.getItem('gameMaster'));">It's me</button>
+            </div>
 
-            <p> This is some text </p>
-            <input onkeydown="
+            <div>
+                <p style="color: black; font-weight: 500; font-size: 16px;"> This is some text </p>
+            </div>
+
+            <div class="input-test">
+                <input class="input-something" onkeydown="
                 if(event.key === 'Enter'){
-                    let val = document.querySelector('input').value;
-                if(value === '') {
+                    let val = document.querySelector('.input-something').value;
+                if(val === '') {
                     document.querySelector('p').innerText = `Please input some value ${val}`;
                 }
                 else {
-                    document.querySelector('.test').click();
+                    document.querySelector('.test-button').click();
                     console.log(document.querySelector('.test'));
                 }
             }     
         " placeholder="Enter something">
 
-            <button class="test" onclick="
-            document.querySelector('p').innerText = `This is the value you enter : ${document.querySelector('input').value}`;
-            alert(document.querySelector('input').value)">Test</button>
+                <button class="test-button" onclick="
+            document.querySelector('p').innerText = `This is the value you enter : ${document.querySelector('.input-something').value}`;
+            alert(document.querySelector('.input-something').value)">Test</button>
+            </div>
         </div>
-    </div> -->
+    </div>
 
     <h1 class="title">This is Rock Paper Scissors game</h1>
     <div class="game-container">

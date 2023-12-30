@@ -89,16 +89,71 @@ body {
     color: black;
 }
 
-input {
-    height: 30px;
-}
-
-.just-buttons {
+.just-buttons-header {
     justify-content: center;
     display: flex;
     flex-direction: row;
-    align-items: center;
+    background-color: #ffa31a;
+    height: 60px;
+    margin: 0px;
 }
+
+.just-buttons {
+    margin: 0px;
+    display: flex;
+    justify-content: space-between;
+    width: 1000px;
+    flex-direction: row;
+}
+
+.just-buttons div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hello-button,
+.its-me-button {
+    height: 34px;
+    border-width: 1px;
+    border-radius: 20px;
+    border-color: rgb(214, 214, 214);
+    border-style: solid;
+    width: 100px;
+    cursor: pointer;
+}
+
+.input-test {
+    max-width: 350px;
+    flex: 1;
+}
+
+.just-buttons .test-button {
+    font-family: Roboto;
+    height: 39px;
+    border-width: 1px;
+    border-color: rgb(214, 214, 214);
+    border-style: solid;
+    border-top-right-radius: 99px;
+    border-bottom-right-radius: 99px;
+    margin-left: -1px;
+    padding: 0px 20px;
+    cursor: pointer;
+}
+
+.input-something {
+    flex: 1;
+    height: 36px;
+    margin: 0;
+    width: 0%;
+    padding-left: 20px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(214, 214, 214);
+    border-bottom-left-radius: 99px;
+    border-top-left-radius: 99px;
+}
+
 
 
 /* TEST TEST TEST TEST TEST TEST */
