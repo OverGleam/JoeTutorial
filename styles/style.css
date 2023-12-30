@@ -4,11 +4,18 @@ body {
     height: 100vh;
     color: white;
     font-family: Roboto, Arial, Helvetica, sans-serif;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
     margin: 0;
+}
+
+.title {
+    text-align: center;
+}
+
+.game-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 .move-buttons {
@@ -39,23 +46,26 @@ body {
     background-color: rgba(255, 255, 255, 0.3);
 }
 
-.move-button:active {
-    background-color: rgba(222, 222, 222, 0.6);
+.move-button:active img {
+    filter: invert(0);
 }
 
 .move-icon {
     margin-bottom: 5px;
     height: 100px;
     filter: invert(1);
+    transition: 0.3s;
 }
 
 .move-icon-result {
+    animation: fadeIn 1s;
     filter: invert(1);
     height: 75px;
     margin: 0px 30px;
 }
 
 .move-icon-result2 {
+    animation: fadeIn 1s;
     height: 75px;
     margin: 0px 30px;
 }
@@ -81,6 +91,13 @@ body {
 
 input {
     height: 30px;
+}
+
+.just-buttons {
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 
 
@@ -134,5 +151,15 @@ input {
         -moz-transform: translateX(-100%);
         -webkit-transform: translateX(-100%);
         transform: translateX(-100%);
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
     }
 }

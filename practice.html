@@ -8,45 +8,20 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/style.css">
-    <title>Document</title>
+    <link rel="icon" href="images/cube.svg" type="image/icon type">
+    <title>JANKENPO</title>
 </head>
 
 <body>
-    <h1 class="title">This is Rock Paper Scissors game</h1>
-    <div class="move-buttons">
-        <button class="move-button" onclick="makeMove('Rock')">
-            <img class="move-icon" src="images/Rock.svg">Rock
-        </button>
 
-        <button class="move-button" onclick="makeMove('Paper')">
-            <img class="move-icon" src="images/Paper.svg">Paper
-        </button>
+    <!-- <div class="just-buttons-header">
+        <div class="just-buttons">
+            <button onclick="alert('Hello!');">Print Hello</button>
 
-        <button class="move-button" onclick="makeMove('Scissors')">
-            <img class="move-icon" src="images/Scissors.svg">Scissors
-        </button>
-    </div>
+            <button onclick="alert(localStorage.getItem('gameMaster'));">It's me</button>
 
-    <div id="scroll-container">
-        <h4 class="result">You win!</h4>
-    </div>
-    <p class="display-moves">Moves</p>
-
-    <p class="js-scores">Win: 0 Lose: 0 Tie: 0</p>
-
-    <button class="reset-button" onclick="
-        resetScore();
-        updateScores();
-        document.querySelector('.display-moves').innerHTML = 'Moves'
-    ">Reset Score</button>
-
-    <!-- <div class="just-buttons">
-        <button onclick="alert('Hello!');">Print Hello</button>
-
-        <button onclick="alert(localStorage.getItem('gameMaster'));">It's me</button>
-
-        <p> This is some text </p>
-        <input onkeydown="
+            <p> This is some text </p>
+            <input onkeydown="
                 if(event.key === 'Enter'){
                     let val = document.querySelector('input').value;
                 if(value === '') {
@@ -59,10 +34,45 @@
             }     
         " placeholder="Enter something">
 
-        <button class="test" onclick="
+            <button class="test" onclick="
             document.querySelector('p').innerText = `This is the value you enter : ${document.querySelector('input').value}`;
             alert(document.querySelector('input').value)">Test</button>
+        </div>
     </div> -->
+
+    <h1 class="title">This is Rock Paper Scissors game</h1>
+    <div class="game-container">
+        <div class="move-buttons">
+            <button class="move-button" onclick="makeMove('Rock')">
+                <img class="move-icon" src="images/Rock.svg">Rock
+            </button>
+
+            <button class="move-button" onclick="makeMove('Paper')">
+                <img class="move-icon" src="images/Paper.svg">Paper
+            </button>
+
+            <button class="move-button" onclick="makeMove('Scissors')">
+                <img class="move-icon" src="images/Scissors.svg">Scissors
+            </button>
+        </div>
+
+        <div id="scroll-container">
+            <h4 class="result">...</h4>
+        </div>
+        <p class="display-moves">Moves</p>
+
+        <p class="js-scores">Win: 0 Lose: 0 Tie: 0</p>
+
+        <button class="reset-button" onclick="
+            resetScore();
+            updateScores();
+            document.querySelector('.display-moves').innerHTML = '';
+            document.querySelector('.result').innerHTML = '';
+    
+        ">Reset Score</button>
+
+    </div>
+
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
     <script src="scripts/script.js"></script>
 </body>

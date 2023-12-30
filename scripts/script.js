@@ -65,17 +65,14 @@ function makeMove(YourMoveResult) {
     else {
         result = 'tie';
         score.tie += 1;
-        alert('Tie\n' + `Win: ${score.win} Lose: ${score.lose} Tie: ${score.tie}`);
     }
 
     function displayResult() {
         if (result === 'win') {
             score.win += 1;
-            alert('You win, Computer Loses!\n' + `Win: ${score.win} Lose: ${score.lose} Tie: ${score.tie}`);
             confetti();
         } else {
             score.lose += 1;
-            alert('You Lose, Computer Wins!\n' + `Win: ${score.win} Lose: ${score.lose} Tie: ${score.tie}`);
         }
     }
 
