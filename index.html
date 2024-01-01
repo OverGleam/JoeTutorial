@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/todolist.css">
     <link rel="icon" href="images/cube.svg" type="image/icon type">
     <title>JANKENPO</title>
 </head>
@@ -17,7 +18,9 @@
     <div class="just-buttons-header">
         <div class="just-buttons">
             <div>
-                <button class="hello-button" onclick="alert('Hello!');">Print Hello</button>
+                <button class="hello-button" onclick="
+                    document.querySelector('p').classList.remove('Hello');
+                    alert('Hello!');">Print Hello</button>
             </div>
 
             <div>
@@ -25,7 +28,7 @@
             </div>
 
             <div>
-                <p style="color: black; font-weight: 500; font-size: 16px;"> This is some text </p>
+                <p style="font-weight: 500; font-size: 16px;"> This is some text </p>
             </div>
 
             <div class="input-test">
@@ -43,35 +46,44 @@
         " placeholder="Enter something">
 
                 <button class="test-button" onclick="
-            document.querySelector('p').innerText = `This is the value you enter : ${document.querySelector('.input-something').value}`;
-            alert(document.querySelector('.input-something').value)">Test</button>
+                    document.querySelector('p').classList.add('Hello')
+                    document.querySelector('p').innerText = `${document.querySelector('.input-something').value}`;
+            
+                    alert(document.querySelector('.input-something').value)">Test</button>
             </div>
         </div>
     </div>
 
     <h1 class="title">This is Rock Paper Scissors game</h1>
+
     <div class="game-container">
         <div class="move-buttons">
             <div class="rock-container">
                 <button class="move-button" onclick="makeMove('Rock')">
                     <img class="move-icon" src="images/Rock.svg">
                 </button>
+                <p class="label">Rock</p>
             </div>
+
             <div class="rock-container">
                 <button class="move-button" onclick="makeMove('Paper')">
                     <img class="move-icon" src="images/Paper.svg">
                 </button>
+                <p class="label">Paper</p>
             </div>
+
             <div class="rock-container">
                 <button class="move-button" onclick="makeMove('Scissors')">
                     <img class="move-icon" src="images/Scissors.svg">
                 </button>
+                <p class="label">Scissors</p>
             </div>
         </div>
 
         <div id="scroll-container">
             <h4 class="result">...</h4>
         </div>
+
         <p class="display-moves">Moves</p>
 
         <p class="js-scores">Win: 0 Lose: 0 Tie: 0</p>
@@ -80,11 +92,21 @@
             resetScore();
             updateScores();
             document.querySelector('.display-moves').innerHTML = '';
-            document.querySelector('.result').innerHTML = '';
-    
-        ">Reset Score</button>
-
+            document.querySelector('.result').innerHTML = '';">Reset Score</button>
     </div>
+
+    <h1 class="title2">Target List</h1>
+    <div class="todo-list-grid">
+        <input class="todo-name" type="text" placeholder="Enter name">
+        <input class="todo-date" type="date">
+        <button class="todo-add-button" onclick="
+            todoAdd();
+        ">Add</button>
+    </div>
+    <div class="todo-grid"></div>
+
+    <script src="scripts/todolist.js">
+    </script>
 
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
     <script src="scripts/script.js"></script>
