@@ -8,9 +8,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/rockpaperscissors.css">
     <link rel="stylesheet" href="styles/todolist.css">
     <link rel="icon" href="images/cube.svg" type="image/icon type">
-    <title>JANKENPO</title>
+    <title>JOE GWAPO</title>
 </head>
 
 <body>
@@ -18,38 +19,18 @@
     <div class="just-buttons-header">
         <div class="just-buttons">
             <div>
-                <button class="hello-button" onclick="
-                    document.querySelector('p').classList.remove('Hello');
-                    alert('Hello!');">Print Hello</button>
+                <button class="autoplay-button">Auto Play</button>
             </div>
-
             <div>
-                <button class="its-me-button" onclick="alert(localStorage.getItem('gameMaster'));">It's me</button>
+                <button class="its-me-button js-itsme-button">It's
+                    me</button>
             </div>
-
             <div>
                 <p style="font-weight: 500; font-size: 16px;"> This is some text </p>
             </div>
-
             <div class="input-test">
-                <input class="input-something" onkeydown="
-                if(event.key === 'Enter'){
-                    let val = document.querySelector('.input-something').value;
-                if(val === '') {
-                    document.querySelector('p').innerText = `Please input some value ${val}`;
-                }
-                else {
-                    document.querySelector('.test-button').click();
-                    console.log(document.querySelector('.test'));
-                }
-            }     
-        " placeholder="Enter something">
-
-                <button class="test-button" onclick="
-                    document.querySelector('p').classList.add('Hello')
-                    document.querySelector('p').innerText = `${document.querySelector('.input-something').value}`;
-            
-                    alert(document.querySelector('.input-something').value)">Test</button>
+                <input class="input-something js-input-something" placeholder="Enter something">
+                <button class="test-button js-test-button">Test</button>
             </div>
         </div>
     </div>
@@ -59,21 +40,21 @@
     <div class="game-container">
         <div class="move-buttons">
             <div class="rock-container">
-                <button class="move-button" onclick="makeMove('Rock')">
+                <button class="move-button js-rock-button">
                     <img class="move-icon" src="images/Rock.svg">
                 </button>
                 <p class="label">Rock</p>
             </div>
 
             <div class="rock-container">
-                <button class="move-button" onclick="makeMove('Paper')">
+                <button class="move-button js-paper-button">
                     <img class="move-icon" src="images/Paper.svg">
                 </button>
                 <p class="label">Paper</p>
             </div>
 
             <div class="rock-container">
-                <button class="move-button" onclick="makeMove('Scissors')">
+                <button class="move-button js-scissors-button">
                     <img class="move-icon" src="images/Scissors.svg">
                 </button>
                 <p class="label">Scissors</p>
@@ -86,30 +67,25 @@
 
         <p class="display-moves">Moves</p>
 
-        <p class="js-scores">Win: 0 Lose: 0 Tie: 0</p>
+        <p class="js-scores"></p>
 
-        <button class="reset-button" onclick="
-            resetScore();
-            updateScores();
-            document.querySelector('.display-moves').innerHTML = '';
-            document.querySelector('.result').innerHTML = '';">Reset Score</button>
+        <button class="reset-button js-reset-button">Reset Score</button>
     </div>
 
     <h1 class="title2">Target List</h1>
     <div class="todo-list-grid">
         <input class="todo-name" type="text" placeholder="Enter name">
         <input class="todo-date" type="date">
-        <button class="todo-add-button" onclick="
-            todoAdd();
-        ">Add</button>
+        <button class="todo-add-button js-todo-add-button">Add</button>
     </div>
     <div class="todo-grid"></div>
 
-    <script src="scripts/todolist.js">
-    </script>
 
-    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
+
     <script src="scripts/script.js"></script>
+    <script src="scripts/rockpaperscissors.js"></script>
+    <script src="scripts/todolist.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
 </body>
 
 </html>
