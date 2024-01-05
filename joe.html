@@ -4,177 +4,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JavaScript Practice by Joe</title>
-    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/general.css">
+    <link rel="stylesheet" href="styles/shop-header.css">
+    <link rel="stylesheet" href="styles/shop-products.css">
+
+    <title>Joe Shop</title>
 </head>
 
 <body>
-    <h1>Hello, World!</h1>
+    <div class="shop-header">
+        <div class="left-section">
+            <img class="side-bar-icon" src="assets/side-bar.svg">
+            <a href="." class="shop-logo-link">
+                <img class="shop-logo" src="assets/JoeLogo.png">
+            </a>
+        </div>
 
-    <p>This is a paragraph.</p>
+        <div class="middle-section">
+            <input class="search-bar" placeholder="Search">
+            <button class="search-button">
+                <img class="search-button-icon" src="assets/search-icon.svg">
+            </button>
+        </div>
 
-    <h6>This is a Heading 6</h6>
-
-    <a href="https://www.example.com">Creates a hyperlink.</a>
-
-    <img src="assets/image.jpg" alt="Description" height="100px" width="100px">
-
-    <ul>
-        <li>Represents a list item.</li>
-        <li>Item 2</li>
-    </ul>
-
-    <ol>
-        <li>Defines an unordered list and an ordered list, respectively.</li>
-        <li>Second</li>
-    </ol>
-
-    <div>
-        <p>Defines a division or a section in an HTML document.</p>
+        <div class="right-section">
+            <a href="." class="orders-link">
+                <span class="return-text">Returns</span>
+                <span class="orders-text">& Orders</span>
+            </a>
+            <a href="." class="cart-link">
+                <img class="cart-icon" src="assets/cart-icon.svg">
+                <div class="cart-quantity">5</div>
+                <div class="cart-text">Cart</div>
+            </a>
+        </div>
     </div>
 
-    <form action="joe.html" method="get">
-        <input type="text" name="username" placeholder="Enter your username">
-        <button type="submit">Submit</button>
-    </form>
+    <div class="product-grid">
 
-    <input type="text" name="username" placeholder="Enter your username">
+    </div>
 
-    <button type="submit" onclick="alert('Hello Worldz');">Submit</button>
-
-    <table>
-        <tr class="Represents a table row">
-            <th>Header 1</th>
-            <th>Header 2</th>
-        </tr>
-        <tr>
-            <td>Data 1</td>
-            <td>Data 2</td>
-        </tr>
-    </table>
-
-    <table>
-        <thead class="defines the header content in a table.">
-            <tr>
-                <th>Header 1</th>
-                <th>Header 2</th>
-            </tr>
-        </thead>
-        <tbody class="defines the body content in a table.">
-            <tr>
-                <td>Data 1</td>
-                <td>Data 2</td>
-            </tr>
-        </tbody>
-        <tfoot class="defines the footer content in a table.">
-            <tr>
-                <td>Footer 1</td>
-                <td>Footer 2</td>
-            </tr>
-        </tfoot>
-    </table>
-
-    <iframe src="https://overgleam.github.io/JoeRepository/" width="1000" height="400"></iframe>
-
-    <audio controls>
-        <source src="assets/audio.mp3" type="audio/mp3">
-        Your browser does not support the audio element.
-    </audio>
-
-    <video width="320" height="240" controls>
-        <source src="assets/video.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
-
-    <p>The <abbr title="World Health Organization">WHO</abbr> is an international organization.</p>
-
-    <p><cite>The Great Gatsby</cite> is a classic novel.</p>
-
-    <p>Use the <code>print()</code> function to display output.</p>
-
-    <pre>
-        Line 1
-        Line 2
-        Line 3
-    </pre>
-
-    <p><em>This is emphasized text.</em></p>
-
-    <p><strong>This is important text.</strong></p>
-
-    <blockquote>
-        <p>This is a quoted text from another source.</p>
-    </blockquote>
-
-    <p><q>This is a short quotation.</q></p>
-
-    <address>
-        Contact: <a href="mailto:john@example.com">john@example.com</a>
-    </address>
-
-    <p>This is some text.</p>
-    <hr>
-    <p>This is more text separated by a horizontal rule.</p>
-
-    <p>This is the first line.<br>This is the second line.</p>
-
-    <p>Water is H<sub>2</sub>O.</p>
-
-    <p>This is 10<sup>2</sup>.</p>
-
-    <p>This is <del>old</del> content and <ins>new</ins> content.</p>
-
-    <p>This is <mark>highlighted</mark> text.</p>
-
-    <p>Event starts at <time datetime="2023-01-01T12:00:00">12:00 PM</time>.</p>
-
-    <progress value="70" max="100">70%</progress>
-
-    <meter value="3" min="0" max="10">30%</meter>
-
-    <details>
-        <summary>Click for more information</summary>
-        <p>This is additional information that can be revealed.</p>
-    </details>
-
-    <fieldset>
-        <legend>Contact Information</legend>
-        <nav>
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/about">About</a></li>
-                <li><a href="/contact">Contact</a></li>
-            </ul>
-        </nav>
-    </fieldset>
-
-    <figure>
-        <img src="assets/   .jpg" alt="Description">
-        <figcaption>Caption for the image</figcaption>
-    </figure>
-
-    <nav>
-        <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/about">About</a></li>
-            <li><a href="/contact">Contact</a></li>
-        </ul>
-    </nav>
-
-    <article>
-        <h2>Article Title</h2>
-        <p>This is the content of the article.</p>
-    </article>
-
-    <p>To save, press <kbd>Ctrl + S</kbd>.</p>
-
-    <p>The output is <samp>Hello, World!</samp></p>
-
-    <p>Let <var>x</var> be the variable.</p>
-
-    <p><dfn>HTML</dfn> stands for HyperText Markup Language.</p>
-
-    <script src="script.js"></script>
+    <script src="scripts/product.js"></script>
 </body>
 
 </html>
